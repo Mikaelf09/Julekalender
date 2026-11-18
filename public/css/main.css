@@ -1,0 +1,166 @@
+:root {
+    --rød: #b3001b;
+    --rød-mørk: #7a0013;
+    --grønn: #0f5132;
+    --grønn-mørk: #08331f;
+    --krem: #fff8e7;
+    --gull: #f2c14e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--grønn);
+     background-image: radial-gradient(circle at 20% 20%, #17663f 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, #0a3f26 0%, transparent 60%);
+    color: var(--krem);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+
+
+header {
+    background-color: var(--grønn-mørk);
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    border-bottom: 12px solid transparent;
+    border-image: repeating-linear-gradient(45deg, var(--rød) 0 14px, var(--krem) 14px 28px) 12;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--gull);
+    text-shadow: 2px 2px 0 var(--rød-mørk);
+}
+
+header p {
+    margin: .5rem 0 0;
+    font-size: 1.2rem;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 3rem;
+}
+
+
+.kalender {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.luke {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background-color: var(--rød);
+    border: 4px solid var(--krem);
+    border-radius: 14px;
+    /* box-shadow: 0 6px 0 var(--rød-mørk), 0 10px 14px rgba(0, 0, 0, .35); */
+    color: var(--krem);
+    text-decoration: none;
+    transition: transform .15s, box-shadow .15s, background-color .15s;
+}
+
+.luke span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--gull);
+    text-shadow: 2px 2px 0 var(--rød-mørk);
+}
+
+.luke:hover {
+    background-color: var(--rød-mørk);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 0 #4d000c, 0 14px 18px rgba(0, 0, 0, .4);
+}
+
+.luke:focus-visible {
+    outline: 4px solid var(--gull);
+    outline-offset: 4px;
+}
+
+/* Nav */
+
+.topp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem 1rem;
+    padding: .0rem .75rem;
+    background-color: var(--grønn-mørk);
+}
+
+.topp .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--gull);
+    text-decoration: none;
+}
+
+.topp ul {
+    display: flex;
+    gap: .75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-knapp {
+    display: block;
+    padding: .35rem 1rem;
+    background-color: var(--rød);
+    border: 3px solid var(--krem);
+    border-radius: 10px;
+    color: var(--gull);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 var(--rød-mørk);
+}
+
+.nav-knapp:hover {
+    background-color: var(--rød-mørk);
+}
+
+.topp a:focus-visible {
+    outline: 4px solid var(--gull);
+    outline-offset: 3px;
+}
+
+/* Mobil: to kolonner */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .kalender {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Ingen bevegelse for de som har skrudd det av */
+@media (prefers-reduced-motion: reduce) {
+    .luke {
+        transition: none;
+    }
+
+    .luke:hover {
+        transform: none;
+    }
+}
+
+
