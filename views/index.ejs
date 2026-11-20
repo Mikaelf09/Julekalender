@@ -9,30 +9,8 @@
 
     <main>
         <ul class="kalender">
-            <li><a class="luke" href="/luke/1" aria-label="Luke 1"><span>1</span></a></li>
-            <li><a class="luke" href="/luke/2" aria-label="Luke 2"><span>2</span></a></li>
-            <li><a class="luke" href="/luke/3" aria-label="Luke 3"><span>3</span></a></li>
-            <li><a class="luke" href="/luke/4" aria-label="Luke 4"><span>4</span></a></li>
-            <li><a class="luke" href="/luke/5" aria-label="Luke 5"><span>5</span></a></li>
-            <li><a class="luke" href="/luke/6" aria-label="Luke 6"><span>6</span></a></li>
-            <li><a class="luke" href="/luke/7" aria-label="Luke 7"><span>7</span></a></li>
-            <li><a class="luke" href="/luke/8" aria-label="Luke 8"><span>8</span></a></li>
-            <li><a class="luke" href="/luke/9" aria-label="Luke 9"><span>9</span></a></li>
-            <li><a class="luke" href="/luke/10" aria-label="Luke 10"><span>10</span></a></li>
-            <li><a class="luke" href="/luke/11" aria-label="Luke 11"><span>11</span></a></li>
-            <li><a class="luke" href="/luke/12" aria-label="Luke 12"><span>12</span></a></li>
-            <li><a class="luke" href="/luke/13" aria-label="Luke 13"><span>13</span></a></li>
-            <li><a class="luke" href="/luke/14" aria-label="Luke 14"><span>14</span></a></li>
-            <li><a class="luke" href="/luke/15" aria-label="Luke 15"><span>15</span></a></li>
-            <li><a class="luke" href="/luke/16" aria-label="Luke 16"><span>16</span></a></li>
-            <li><a class="luke" href="/luke/17" aria-label="Luke 17"><span>17</span></a></li>
-            <li><a class="luke" href="/luke/18" aria-label="Luke 18"><span>18</span></a></li>
-            <li><a class="luke" href="/luke/19" aria-label="Luke 19"><span>19</span></a></li>
-            <li><a class="luke" href="/luke/20" aria-label="Luke 20"><span>20</span></a></li>
-            <li><a class="luke" href="/luke/21" aria-label="Luke 21"><span>21</span></a></li>
-            <li><a class="luke" href="/luke/22" aria-label="Luke 22"><span>22</span></a></li>
-            <li><a class="luke" href="/luke/23" aria-label="Luke 23"><span>23</span></a></li>
-            <li><a class="luke" href="/luke/24" aria-label="Luke 24"><span>24</span></a></li>
+            <% for (let i = 1; i <= 24; i++) { %>
+                <li><a class="luke" href="/luke/<%= i %>" aria-label="Luke <%= i %>"><span><%= i %></span></a></li>            <% } %>
         </ul>
     </main>
 </body>
