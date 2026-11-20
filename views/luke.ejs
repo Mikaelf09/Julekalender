@@ -1,0 +1,38 @@
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+    <main id="innhold" class="luke-side">
+        <p><a href="/">← Tilbake til kalenderen</a></p>
+
+        <h1>Luke <%= id %></h1>
+
+        <% if (type === "video" && videoUrl) { %>
+            <iframe class="video"
+                    src="<%= videoUrl %>"
+                    title="Video til luke <%= id %>"
+                    allowfullscreen></iframe>
+        <% } %>
+
+        <form action="/luke/<%= id %>/svar" method="post">
+
+            <% if (type === "multiple_choice") { %>
+                <fieldset>
+                    <legend><%= sporsmal %></legend>
+                    <% alternativer.forEach(function(alt, i) { %>
+                        <div class="valg">
+                            <input type="radio" id="alt<%= i %>" name="svar" value="<%= alt %>" required>
+                            <label for="alt<%= i %>"><%= alt %></label>
+                        </div>
+                    <% }) %>
+                </fieldset>
+            <% } else { %>
+                <label for="svar"><%= sporsmal %></label>
+                <input type="text" id="svar" name="svar" required>
+            <% } %>
+
+            <button type="submit">Send inn svar</button>
+        </form>
+    </main>
+</body>
+</html>

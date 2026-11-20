@@ -2,14 +2,15 @@
 <body>
     <%- include("./partials/nav.ejs") %>
 
-    <h1>Login</h1>
-    <form action=""method="post">
+ <form action="" method="post">
+        <h1>Login</h1>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" >
-
-
-        <a href="/registerUser"> Register user </a>
-        <button>Log in</button>
+        <input type="email" 
+        id="email" 
+        placeholder="email@afk.no"
+        name="email"
+        pattern=".+@afk.no">
+        <button>login</button>
     </form>
 </body>
 </html>

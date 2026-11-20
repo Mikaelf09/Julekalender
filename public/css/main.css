@@ -15,7 +15,7 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: var(--grønn);
-     background-image: radial-gradient(circle at 20% 20%, #17663f 0%, transparent 60%),
+    background-image: radial-gradient(circle at 20% 20%, #17663f 0%, transparent 60%),
     radial-gradient(circle at 80% 80%, #0a3f26 0%, transparent 60%);
     color: var(--krem);
     font-family: Georgia, "Times New Roman", serif;
@@ -67,7 +67,6 @@ main {
     background-color: var(--rød);
     border: 4px solid var(--krem);
     border-radius: 14px;
-    /* box-shadow: 0 6px 0 var(--rød-mørk), 0 10px 14px rgba(0, 0, 0, .35); */
     color: var(--krem);
     text-decoration: none;
     transition: transform .15s, box-shadow .15s, background-color .15s;
@@ -140,6 +139,106 @@ main {
     outline-offset: 3px;
 }
 
+
+/* ---------- Lukeside ---------- */
+.luke-side {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+    font-size: 1.15rem;
+}
+
+.luke-side a {
+    color: var(--gull);
+}
+
+.luke-side h1 {
+    color: var(--gull);
+    text-shadow: 2px 2px 0 var(--rød-mørk);
+}
+
+.video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--krem);
+    border-radius: 12px;
+}
+
+.luke-side form {
+    padding: 1.25rem 1.5rem 1.5rem;
+    background-color: var(--grønn-mørk);
+    border: 3px solid var(--krem);
+    border-radius: 14px;
+}
+
+.luke-side label,
+.luke-side legend {
+    display: block;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.luke-side fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.luke-side .valg {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: .5rem;
+    padding: .6rem .8rem;
+    border: 2px solid var(--krem);
+    border-radius: 10px;
+}
+
+.luke-side .valg input {
+    width: 1.3rem;
+    height: 1.3rem;
+    accent-color: var(--rød);
+}
+
+.luke-side .valg label {
+    margin: 0;
+    font-weight: normal;
+    flex: 1;
+    cursor: pointer;
+}
+
+.luke-side input[type="text"] {
+    width: 100%;
+    padding: .6rem;
+    font: inherit;
+    border: 2px solid var(--krem);
+    border-radius: 8px;
+    background-color: var(--krem);
+    color: #1f1a14;
+}
+
+.luke-side button {
+    margin-top: 1rem;
+    padding: .65rem 1.2rem;
+    font: inherit;
+    font-weight: bold;
+    color: var(--krem);
+    background-color: var(--rød);
+    border: 3px solid var(--krem);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.luke-side input:focus-visible,
+.luke-side button:focus-visible,
+.luke-side a:focus-visible {
+    outline: 4px solid var(--gull);
+    outline-offset: 3px;
+}
+
+
 /* Mobil: to kolonner */
 @media (max-width: 480px) {
     header h1 {
@@ -151,6 +250,156 @@ main {
         gap: 1rem;
     }
 }
+
+/* ---------- Admin ---------- */
+.skjult {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.admin-side {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+.admin-side h1 {
+    color: var(--gull);
+    text-shadow: 2px 2px 0 var(--rød-mørk);
+}
+
+/* To paneler ved siden av hverandre, ett over det andre på mobil */
+.admin-rutenett {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.admin-panel {
+    padding: 1.25rem 1.5rem;
+    background-color: var(--grønn-mørk);
+    border: 3px solid var(--krem);
+    border-radius: 14px;
+    min-width: 0;
+}
+
+.admin-panel h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.3rem;
+    color: var(--gull);
+}
+
+.admin-panel p {
+    margin: .4rem 0;
+}
+
+.stor-dag {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.admin-panel .liten {
+    font-size: .9rem;
+    opacity: .85;
+}
+
+.bruker-liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bruker-liste li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .5rem 0;
+    border-bottom: 1px solid rgba(255, 248, 231, .3);
+}
+
+.admin-knapp {
+    margin-top: .75rem;
+    padding: .6rem 1.2rem;
+    font: inherit;
+    font-weight: bold;
+    color: var(--krem);
+    background-color: var(--rød);
+    border: 3px solid var(--krem);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.admin-knapp:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.admin-knapp:focus-visible {
+    outline: 4px solid var(--gull);
+    outline-offset: 3px;
+}
+
+.tabell-ramme {
+    overflow-x: auto;
+}
+
+.admin-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--krem);
+    color: #1f1a14;
+}
+
+.admin-panel th,
+.admin-panel td {
+    text-align: left;
+    padding: .5rem .6rem;
+    border-bottom: 1px solid #c9bfa4;
+}
+
+.admin-panel th {
+    background-color: var(--grønn);
+    color: var(--krem);
+}
+
+/* Status vises med symbol og tekst, ikke bare farge */
+.status {
+    display: inline-block;
+    padding: .1rem .5rem;
+    border: 2px solid;
+    border-radius: 6px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.status-riktig {
+    color: #0a3b22;
+    border-color: #0a3b22;
+    background-color: #e3f4e9;
+}
+
+.status-feil {
+    color: #6b0011;
+    border-color: #6b0011;
+    background-color: #fde7ea;
+}
+
+.status-venter {
+    color: #3d3d3d;
+    border-color: #3d3d3d;
+    background-color: #eeeeee;
+}
+
+@media (max-width: 760px) {
+    .admin-rutenett {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Ingen bevegelse for de som har skrudd det av */
 @media (prefers-reduced-motion: reduce) {
